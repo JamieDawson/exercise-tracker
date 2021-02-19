@@ -4,6 +4,7 @@ let User = require('../models/user.model');
 //localhost:5000/users/
 //if get request.
 router.route('/').get((req, res) => {
+	console.log('test');
 	User.find() //mongoose method. Returns a promise in json
 		.then((users) => res.json(users))
 		.catch((err) => res.status(400).json('Error: ' + err));
