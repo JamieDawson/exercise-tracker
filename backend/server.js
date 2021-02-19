@@ -26,6 +26,9 @@ connection.once('open', () => {
 const exerciseRouter = require('./routes/exercises');
 const userRouter = require('./routes/users');
 
+app.use('/exercises', exerciseRouter); //if you go to this url, it loads everything in exercises router.
+app.use('/users', userRouter);
+
 app.listen(port, () => {
 	console.log(`server is one ${port}`);
 });
